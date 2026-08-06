@@ -44,7 +44,9 @@ except ImportError:
 # ============ CẤU HÌNH ============
 
 # Thư mục gốc ComfyUI. Mặc định: cùng cấp với file script này.
-COMFYUI_DIR = Path(os.environ.get("COMFYUI_DIR", Path(__file__).resolve().parent / "ComfyUI"))
+COMFYUI_DIR = Path(
+    os.environ.get("COMFYUI_DIR", Path(__file__).resolve().parent)
+)
 
 HF_TOKEN = os.environ.get("HF_TOKEN")
 
