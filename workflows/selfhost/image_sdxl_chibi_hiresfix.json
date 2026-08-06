@@ -1,0 +1,126 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 156680208700286,
+      "steps": 22,
+      "cfg": 7,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": ["10", 0],
+      "positive": ["6", 0],
+      "negative": ["7", 0],
+      "latent_image": ["5", 0]
+    },
+    "class_type": "KSampler",
+    "_meta": { "title": "KSampler" }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "waiIllustriousSDXL_v140.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": { "title": "Load Checkpoint" }
+  },
+  "5": {
+    "inputs": {
+      "width": ["41", 0],
+      "height": ["42", 0],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": { "title": "Empty Latent Image" }
+  },
+  "6": {
+    "inputs": {
+      "text": ["46", 0],
+      "clip": ["10", 1]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "CLIP Text Encode (Positive)" }
+  },
+  "7": {
+    "inputs": {
+      "text": ["45", 0],
+      "clip": ["10", 1]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "CLIP Text Encode (Negative)" }
+  },
+  "8": {
+    "inputs": {
+      "samples": ["51", 0],
+      "vae": ["4", 2]
+    },
+    "class_type": "VAEDecode",
+    "_meta": { "title": "VAE Decode" }
+  },
+  "50": {
+    "inputs": {
+      "upscale_method": "bilinear",
+      "scale_by": 1.5,
+      "samples": ["3", 0]
+    },
+    "class_type": "LatentUpscaleBy",
+    "_meta": { "title": "Latent Upscale (Hires Fix)" }
+  },
+  "51": {
+    "inputs": {
+      "seed": 156680208700286,
+      "steps": 16,
+      "cfg": 7,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 0.45,
+      "model": ["10", 0],
+      "positive": ["6", 0],
+      "negative": ["7", 0],
+      "latent_image": ["50", 0]
+    },
+    "class_type": "KSampler",
+    "_meta": { "title": "KSampler (Hires Fix Pass)" }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": ["8", 0]
+    },
+    "class_type": "SaveImage",
+    "_meta": { "title": "Save Image" }
+  },
+  "10": {
+    "inputs": {
+      "lora_name": "ChibiCartoon_Style.safetensors",
+      "strength_model": 0.45,
+      "strength_clip": 0.45,
+      "model": ["4", 0],
+      "clip": ["4", 1]
+    },
+    "class_type": "LoraLoader",
+    "_meta": { "title": "Load LoRA" }
+  },
+  "41": {
+    "inputs": { "value": 1024 },
+    "class_type": "easy int",
+    "_meta": { "title": "$width.value" }
+  },
+  "42": {
+    "inputs": { "value": 1024 },
+    "class_type": "easy int",
+    "_meta": { "title": "$height.value" }
+  },
+  "45": {
+    "inputs": {
+      "value": "low quality, worst quality, blurry, deformed, extra limbs, watermark, text, bad anatomy, bad hands, extra fingers, missing fingers, fused fingers, mutated hands, poorly drawn hands, poorly drawn face, malformed limbs, long neck, cropped head, disfigured, signature, username, jpeg artifacts, lowres, detailed face, realistic anatomy, anime eyes, detailed hair strands, intricate background, photorealistic, shading, gradient, textured surface, complex scenery, multiple small objects, realistic lighting, depth of field, detailed clothing folds, blob creature, mochi character, limbless, no arms, no legs, plush toy, stuffed animal, rabbit ears, animal ears, mascot character, disconnected limbs, floating limbs, floating objects, detached body parts, incomplete body, headless, missing torso, disproportionate body, tiny body large head extreme"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": { "title": "$negative_prompt.value" }
+  },
+  "46": {
+    "inputs": {
+      "value": "full body character, one round head connected to a simple torso, two arms connected to the torso, two legs connected to the torso, standing pose, correct human proportions, simple dot eyes, no visible mouth, plain white body, minimalist flat 2D vector illustration, clean simple linework, plain background, no shading, no gradient, a dog"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": { "title": "$prompt.value!" }
+  }
+}

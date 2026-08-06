@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursorrules
+.cursorignore
+.kiro/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config files with sensitive data
+config.yaml
+config.yaml.bak
+*.yaml.bak
+.env
+
+# Logs
+*.log
+
+# Test outputs
+test_outputs/
+*.mp3
+*.wav
+*.bak
+test_*.py
+
+!bgm/default.mp3
+
+# Temp files
+temp/
+tmp/
+.cache/
+
+# MkDocs build output
+site/
+
+data
+output
+
+plans/
+examples/
+repositories/
+
+*.out

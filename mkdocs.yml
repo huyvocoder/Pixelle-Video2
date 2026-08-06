@@ -1,0 +1,171 @@
+site_name: Pixelle-Video
+site_description: AI Video Creator - Generate a short video in 3 minutes
+site_author: Pixelle.AI
+site_url: https://AIDC-AI.github.io/Pixelle-Video/
+
+repo_name: AIDC-AI/Pixelle-Video
+repo_url: https://github.com/AIDC-AI/Pixelle-Video
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2025 Pixelle.AI
+
+theme:
+  name: material
+  language: en
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  features:
+    - navigation.instant       # Instant loading
+    - navigation.tracking      # Anchor tracking
+    - navigation.tabs          # Top-level tabs
+    - navigation.tabs.sticky   # Sticky tabs
+    - navigation.sections      # Sidebar sections
+    - navigation.expand        # Expand sections
+    - navigation.top           # Back to top button
+    - navigation.footer        # Footer navigation
+    - search.suggest           # Search suggestions
+    - search.highlight         # Search highlighting
+    - search.share             # Share search results
+    - content.code.copy        # Copy button for code blocks
+    - content.code.annotate    # Code annotations
+    - content.tabs.link        # Link content tabs
+  
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang:
+        - en
+        - zh
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: zh
+          name: 中文
+          build: true
+          nav_translations:
+            Home: 首页
+            Getting Started: 快速开始
+            Installation: 安装
+            Quick Start: 快速入门
+            Configuration: 配置
+            User Guide: 用户指南
+            Web UI: Web 界面
+            API Usage: API 使用
+            Workflows: 工作流定制
+            Templates: 模板开发
+            Gallery: 示例库
+            Tutorials: 教程
+            Your First Video: 生成你的第一个视频
+            Custom Style: 自定义视觉风格
+            Voice Cloning: 声音克隆
+            Reference: 参考
+            API Overview: API 概览
+            Config Schema: 配置文件详解
+            Development: 开发指南
+            Architecture: 架构设计
+            Contributing: 贡献指南
+            FAQ: 常见问题
+            Troubleshooting: 故障排查
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: datetime
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+    - Configuration: getting-started/configuration.md
+  - User Guide:
+    - Web UI: user-guide/web-ui.md
+    - API Usage: user-guide/api.md
+    - Workflows: user-guide/workflows.md
+    - Templates: user-guide/templates.md
+  - Gallery: gallery/index.md
+  - Tutorials:
+    - Your First Video: tutorials/your-first-video.md
+    - Custom Style: tutorials/custom-style.md
+    - Voice Cloning: tutorials/voice-cloning.md
+  - Reference:
+    - API Overview: reference/api-overview.md
+    - Config Schema: reference/config-schema.md
+  - Development:
+    - Architecture: development/architecture.md
+    - Contributing: development/contributing.md
+  - FAQ: faq.md
+  - Troubleshooting: troubleshooting.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/AIDC-AI/Pixelle-Video
+      name: GitHub Repository
+
+extra_css:
+  - stylesheets/extra.css
