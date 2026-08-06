@@ -42,7 +42,7 @@
   },
   "9": {
     "inputs": {
-      "filename_prefix": "Flux2-Klein",
+      "filename_prefix": "Flux2-Klein-4B-fp8",
       "images": [
         "80",
         0
@@ -73,7 +73,7 @@
   },
   "75:62": {
     "inputs": {
-      "steps": 6,
+      "steps": 8,
       "width": [
         "75:68",
         0
@@ -249,21 +249,22 @@
   },
   "75:96": {
     "inputs": {
-      "unet_name": "flux-2-klein-4b-Q5_K_M.gguf"
+      "unet_name": "flux-2-klein-4b-fp8.safetensors",
+      "weight_dtype": "fp8_e4m3fn"
     },
-    "class_type": "UnetLoaderGGUF",
+    "class_type": "UNETLoader",
     "_meta": {
-      "title": "Unet Loader (GGUF)"
+      "title": "Load Diffusion Model (Flux.2 Klein 4B fp8)"
     }
   },
   "75:97": {
     "inputs": {
-      "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+      "clip_name": "qwen_3_4b.safetensors",
       "type": "flux2"
     },
-    "class_type": "CLIPLoaderGGUF",
+    "class_type": "CLIPLoader",
     "_meta": {
-      "title": "CLIPLoader (GGUF)"
+      "title": "CLIPLoader (Qwen3-4B, route 4B)"
     }
   }
 }
